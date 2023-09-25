@@ -32,8 +32,15 @@ public interface HelperUser extends HelperBase{
         type(By.id("password"), user.getPassword());
         logger.info("registrationPositiveTest starts with:" + user.getEmail() + " & " + user.getPassword());
         clickCheckbox();
+        clickBtn();
     }
-
+    default void fillRegistrationForm1(User user) {
+        type(By.id("name"), user.getName());
+        type(By.id("lastName"), user.getLastName());
+        type(By.id("email"), user.getEmail());
+        type(By.id("password"), user.getPassword());
+        logger.info("registrationNegativeTest starts with:" + user.getEmail() + " & " + user.getPassword());
+    }
     default void clickCheckbox(){
         // variant 1
 //     click(By.cssSelector("label[for='terms-of-use']"));
@@ -75,4 +82,23 @@ public interface HelperUser extends HelperBase{
         clickOkButton();
     }
 
+    default boolean isErrorMessageDisplayed1() {
+        return isElementPresent(By.xpath("//div[contains(text(), ' Name is required ')]"));
+
+    }
+    default boolean isErrorMessageDisplayed2() {
+        return isElementPresent(By.xpath("//div[contains(text(), 'Last name is required')]"));
+    }
+        default boolean isErrorMessageDisplayed3() {
+        return isElementPresent(By.xpath("//div[contains(text(), 'Wrong email format')]"));
+    }
+
+    default boolean isErrorMessageDisplayed4() {
+        return isElementPresent(By.xpath("//div[contains(text(), 'Password must contain 1 uppercase letter, 1 lowercase letter, 1 number and one special symbol of [@$#^&*!]')]"));
+
+    }
+
+    default void clickBtn(){
+        click(By.xpath("//h1[normalize-space()='Registration'][1]"));
+    }
 }

@@ -15,14 +15,13 @@ public class TestBase implements HelperUser, HelperCar {
     WebDriver wd;
 
 
-
     @BeforeMethod
-    public void startTest(Method method){
+    public void startTest(Method method) {
         logger.info("Started test ----> " + method.getName());
     }
 
     @AfterMethod
-    public void stopTest(Method method){
+    public void stopTest(Method method) {
         logger.info("Finished test ----> " + method.getName());
     }
 
@@ -32,7 +31,7 @@ public class TestBase implements HelperUser, HelperCar {
 //        wd.navigate().to("https://ilcarro.web.app/search");
 //        wd.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 //    }
-    public void setup(){
+    public void setup() {
         init();
     }
 
@@ -41,11 +40,11 @@ public class TestBase implements HelperUser, HelperCar {
 //        pause(5000);
 //        wd.quit();
 //    }
-    public void stop(){
+    public void stop() {
         pause(5000);
         tearDown();
     }
-
+}
 //
 //    public void pause(int millis){
 //        try {
@@ -98,4 +97,4 @@ public class TestBase implements HelperUser, HelperCar {
 
 
 
-}
+

@@ -45,4 +45,6 @@ public interface HelperBase extends ApplicationManager{
         return true;
     }
 
+    default void refresh() {wd.navigate().refresh();}
+
 }
