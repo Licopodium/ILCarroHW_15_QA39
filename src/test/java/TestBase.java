@@ -1,21 +1,30 @@
-import manager.ApplicationManager;
-import manager.HelperBase;
+
 import manager.HelperCar;
 import manager.HelperUser;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
-import java.util.concurrent.TimeUnit;
+import java.lang.reflect.Method;
+
 
 public class TestBase implements HelperUser, HelperCar {
 
     WebDriver wd;
+
+
+
+    @BeforeMethod
+    public void startTest(Method method){
+        logger.info("Started test ----> " + method.getName());
+    }
+
+    @AfterMethod
+    public void stopTest(Method method){
+        logger.info("Finished test ----> " + method.getName());
+    }
 
     @BeforeSuite
 //    public void init(){

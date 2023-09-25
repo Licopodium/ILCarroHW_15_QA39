@@ -2,7 +2,6 @@ package manager;
 
 import models.Car;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -31,6 +30,7 @@ public interface HelperCar extends HelperBase{
         typeSerialNumber(car.getCarRegNumber());
         type(By.id("price"), car.getPrice());
         type(By.id("about"), car.getAbout());
+        logger.info("FillCarForm finished");
     }
 
     default void typeLocation(String location){

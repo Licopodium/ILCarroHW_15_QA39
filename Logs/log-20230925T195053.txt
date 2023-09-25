@@ -1,0 +1,6 @@
+2023-09-25 19:50:58,441 INFO m.ApplicationManager [ApplicationManager.java:21] Navigated to the link ---> https://ilcarro.web.app/search
+2023-09-25 19:50:58,465 INFO m.HelperBase [TestBase.java:27] Started test ----> registrationPositive
+2023-09-25 19:50:59,024 INFO m.HelperBase [HelperUser.java:33] registrationPositiveTest starts with:tlv_3058@cit.com & $T234543a
+2023-09-25 19:50:59,036 INFO m.HelperBase [HelperUser.java:43] ClickCheckbox is successful
+2023-09-25 19:50:59,094 INFO m.HelperBase [TestBase.java:32] Finished test ----> registrationPositive
+2023-09-25 19:51:04,696 INFO m.ApplicationManager [ApplicationManager.java:28] Tests completed

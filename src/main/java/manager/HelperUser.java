@@ -18,25 +18,29 @@ public interface HelperUser extends HelperBase{
     default void fillLoginForm(String email, String password){
         type(By.id("email"), email);
         type(By.id("password"), password);
+        logger.info("Fill LoginForm with:" + email + " & " + password);
     }
     default void fillLoginForm(User user){
         type(By.id("email"), user.getEmail());
         type(By.id("password"), user.getPassword());
+        logger.info("Fill LoginForm with:" + user.getEmail() + " & " + user.getPassword());
     }
     default void fillRegistrationForm(User user){
         type(By.id("name"), user.getName());
         type(By.id("lastName"), user.getLastName());
         type(By.id("email"), user.getEmail());
         type(By.id("password"), user.getPassword());
+        logger.info("registrationPositiveTest starts with:" + user.getEmail() + " & " + user.getPassword());
         clickCheckbox();
     }
 
     default void clickCheckbox(){
         // variant 1
 //     click(By.cssSelector("label[for='terms-of-use']"));
-     // variant 2
+        // variant 2
         JavascriptExecutor js = (JavascriptExecutor)wd;
         js.executeScript("document.querySelector('#terms-of-use').click();");
+        logger.info("ClickCheckbox is successful");
     }
 
 

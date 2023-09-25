@@ -9,8 +9,8 @@ public class AddNewCarTests extends TestBase {
     public void precondition(){
         if(isLogged() == false){
             login(new User()
-                    .withEmail("asd@fgh.com")
-                    .withPassword("$Asdf1234")
+                    .withEmail("tlv_2460@cit.com")
+                    .withPassword("$T234543a")
             );
         }
     }

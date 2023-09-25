@@ -8,21 +8,21 @@ public class LoginTests extends TestBase{
 
     @BeforeMethod
     public void precondition(){
-    if(isLogged()) logout();
+        if(isLogged()) logout();
     }
 
     @Test
     public void loginPositiveTest(){
         openLoginForm();
-        fillLoginForm("asd@fgh.com", "$Asdf1234");
+        fillLoginForm("tlv_2460@cit.com", "$T234543a");
         submitLogin();
         Assert.assertTrue(isLoggedSuccess());
     }
     @Test
     public void loginPositiveTestModel(){
         User user = new User()
-                .withEmail("asd@fgh.com")
-                .withPassword("$Asdf1234");
+                .withEmail("tlv_2460@cit.com")
+                .withPassword("$T234543a");
         openLoginForm();
         fillLoginForm(user.getEmail(), user.getPassword());
         submitLogin();
@@ -33,5 +33,6 @@ public class LoginTests extends TestBase{
     public void postcondition(){
         clickOkButton();
     }
+
 
 }
