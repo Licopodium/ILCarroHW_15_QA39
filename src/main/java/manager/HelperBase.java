@@ -8,6 +8,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.io.File;
+import java.io.IOException;
+
+
 public interface HelperBase extends ApplicationManager{
 
     Logger logger = LoggerFactory.getLogger(HelperBase.class);
@@ -38,7 +46,8 @@ public interface HelperBase extends ApplicationManager{
     default boolean isAlertPresent(){
         Alert alert = new WebDriverWait(wd, 5)
                 .until(ExpectedConditions.alertIsPresent());
-        if(alert == null) return false;
+        if(alert == null)
+            return false;
         wd.switchTo().alert();
         System.out.println(alert.getText());
         alert.accept();
@@ -48,3 +57,5 @@ public interface HelperBase extends ApplicationManager{
     default void refresh() {wd.navigate().refresh();}
 
 }
+
+

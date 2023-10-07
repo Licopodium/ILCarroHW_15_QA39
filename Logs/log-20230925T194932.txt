@@ -1,6 +1,0 @@
-2023-09-25 19:49:38,358 INFO m.ApplicationManager [ApplicationManager.java:21] Navigated to the link ---> https://ilcarro.web.app/search
-2023-09-25 19:49:38,383 INFO m.HelperBase [TestBase.java:27] Started test ----> addNewCarPositive
-2023-09-25 19:49:41,799 INFO m.HelperBase [HelperUser.java:26] Fill LoginForm with:tlv_2460@cit.com & $T234543a
-2023-09-25 19:49:50,475 INFO m.HelperBase [HelperCar.java:34] FillCarForm finished
-2023-09-25 19:49:55,482 INFO m.HelperBase [TestBase.java:32] Finished test ----> addNewCarPositive
-2023-09-25 19:50:01,084 INFO m.ApplicationManager [ApplicationManager.java:28] Tests completed

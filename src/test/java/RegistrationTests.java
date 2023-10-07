@@ -28,7 +28,7 @@ public class RegistrationTests extends TestBase{
     }
 
 
-   @Test
+    @Test
     public void registrationNegativeInvalidName() {
         int i = (int) (System.currentTimeMillis() / 1000) % 3600;
 
@@ -41,16 +41,16 @@ public class RegistrationTests extends TestBase{
 
         openRegistrationForm();
         fillRegistrationForm1(user);
-       submitRegistration();
+        submitRegistration();
 
-       boolean isErrorMessageDisplayed = isErrorMessageDisplayed1();
-       if (isErrorMessageDisplayed) {
-           logger.info("Registration with invalid name failed as expected.");
-       } else {
-           logger.error("Registration with invalid name did not display the expected error message.");
-       }
-       Assert.assertTrue(isErrorMessageDisplayed);
-   }
+        boolean isErrorMessageDisplayed = isErrorMessageDisplayed1();
+        if (isErrorMessageDisplayed) {
+            logger.info("Registration with invalid name failed as expected.");
+        } else {
+            logger.error("Registration with invalid name did not display the expected error message.");
+        }
+        Assert.assertTrue(isErrorMessageDisplayed);
+    }
 
     @Test
     public void registrationNegativeInvalidLastName() {

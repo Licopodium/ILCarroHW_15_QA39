@@ -89,7 +89,7 @@ public interface HelperUser extends HelperBase{
     default boolean isErrorMessageDisplayed2() {
         return isElementPresent(By.xpath("//div[contains(text(), 'Last name is required')]"));
     }
-        default boolean isErrorMessageDisplayed3() {
+    default boolean isErrorMessageDisplayed3() {
         return isElementPresent(By.xpath("//div[contains(text(), 'Wrong email format')]"));
     }
 
