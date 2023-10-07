@@ -1,6 +1,6 @@
 package manager;
 
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,15 +13,13 @@ public interface ApplicationManager {
     EventFiringWebDriver wd = new EventFiringWebDriver(new ChromeDriver());
 
     default void init(){
-//        wd = new ChromeDriver();
-//        wd.manage().window().maximize();
 
         String link = "https://ilcarro.web.app/search";
         wd.register(new WDListener());
         wd.navigate().to(link);
         logger.info("Navigated to the link ---> " + link);
         wd.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-//        helperUser = new HelperUser(wd);
+
     }
 
     default void tearDown(){

@@ -1,23 +1,16 @@
 package manager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.google.common.io.Files;
-import org.openqa.selenium.*;
-import utils.DateUtil;
 import java.io.File;
 import java.io.IOException;
 import static manager.ApplicationManager.wd;
 
-public class WDListener extends AbstractWebDriverEventListener{
-
+public class WDListener extends AbstractWebDriverEventListener  {
     Logger logger = LoggerFactory.getLogger(WDListener.class);
-
 
     public WDListener()
     {
@@ -27,7 +20,7 @@ public class WDListener extends AbstractWebDriverEventListener{
     @Override
     public void beforeFindBy(By by, WebElement element, WebDriver driver) {
         super.beforeFindBy(by, element, driver);
-        logger.info("Start searching element by locator --> " + by);
+        logger.info("Start searching element by locator --->" + by);
     }
 
     @Override
@@ -42,10 +35,11 @@ public class WDListener extends AbstractWebDriverEventListener{
         logger.info("Something went wrong!!!");
         logger.info(throwable.getMessage());
         logger.info(throwable.fillInStackTrace().toString());
-        int i = (int)(System.currentTimeMillis()/1000)%3600;
+
+        int i = (int)(System.currentTimeMillis()/1000%3600);
         String link = "src/test/screenshots/screenshot-" + i + ".png";
         takeScreenshot(link);
-        logger.info("Here is the path to screenshot with error --> " + link);
+        logger.info("Here is the pass to screenshot with error ---> "+ link);
 
     }
     public void takeScreenshot(String link) {
@@ -57,15 +51,5 @@ public class WDListener extends AbstractWebDriverEventListener{
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-}
-
-
-
-
-
-
-
-
-
+    }  }
 
